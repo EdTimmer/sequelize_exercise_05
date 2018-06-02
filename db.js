@@ -47,7 +47,8 @@ conn.sync({ force: true })
       moe.setCity(la),
       larry.setCity(chicago),
       curly.setCity(nyc),
-      moe.setMayor(nyc),
-      larry.setMayor(chicago)
+      moe.setMayor(la),
+      larry.setMayor(chicago),
+      curly.setMayor(la)  //intentional wrong city
     ]);
   });
