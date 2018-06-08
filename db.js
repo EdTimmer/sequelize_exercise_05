@@ -63,7 +63,7 @@ conn.sync({ force: true })
     }
   }))
   .then(user => {
-    _user = user;
+    const _user = user;
     return Apartment.findOne({
       where: {
         userId: user.id
@@ -71,7 +71,7 @@ conn.sync({ force: true })
     })
   })
   .then(apt => {
-    _apt = apt;
+    const _apt = apt;
     return Building.findById(apt.buildingId)
   })
   .then(building => console.log(`${_user.name} lives in apartment ${_apt.name} in ${building.name}`));
@@ -85,7 +85,7 @@ conn.sync({ force: true })
     }
   }))
   .then(user => {
-    _user = user;
+    const _user = user;
     return Apartment.findAll({
       where: {
         userId: user.id
@@ -93,7 +93,7 @@ conn.sync({ force: true })
     })
   })
   .then(apts => {
-    _apts = apts;
+    const _apts = apts;
     apts.forEach( apt => Building.findAll({
       where: {
         id: apt.buildingId
